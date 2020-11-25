@@ -19,54 +19,13 @@
 # Some rights reserved, see README and LICENSE.
 
 from bika.lims.catalog import SETUP_CATALOG
-
-from plone.dexterity.content import Container
-from plone.supermodel import model
-
-from senaite.microorganism import messageFactory as _
-from zope import schema
+from plone.dexterity.content import Item
+from senaite.microorganism.interfaces import IMicroorganism
 from zope.interface import implementer
 
 
-class IMicroorganism(model.Schema):
-    """Microorganism content interface
-    """
-    gram_stain = schema.Choice(
-        title=_(u"Gram stain"),
-        description=_(
-            ""
-        ),
-        vocabulary="senaite.microorganism.vocabularies.gram_stains",
-        default="Undefined",
-    )
-
-    glass = schema.Bool(
-        title=_(u"GLASS organism"),
-        description=_(
-            "Whether this is an infectious organism included in the Global "
-            "Antimicrobial Resistance Surveillance System (GLASS) for the "
-            "the collection, analysis and sharing of Antimicrobial Resistance "
-            "(AMR) data at a global level"
-        ),
-        required=False,
-    )
-
-    multi_resistant = schema.Bool(
-        title=_(u"MRO Organism"),
-        description=_(
-            "Whether this organism is considered multi resistant (MRO)",
-        ),
-        required=False,
-    )
-
-    mro_phenotype = schema.TextLine(
-        title=_(u"MRO phenotype"),
-        required=False,
-    )
-
-
 @implementer(IMicroorganism)
-class Microorganism(Container):
+class Microorganism(Item):
     """Microorganism content
     """
     # Catalogs where this type will be catalogued

@@ -17,13 +17,3 @@
 #
 # Copyright 2020 by it's authors.
 # Some rights reserved, see README and LICENSE.
-
-from plone.dexterity.content import Container
-from senaite.microorganism.interfaces import IMicroorganismFolder
-from zope.interface import implementer
-
-
-@implementer(IMicroorganismFolder)
-class MicroorganismFolder(Container):
-    """Microorganisms folder
-    """

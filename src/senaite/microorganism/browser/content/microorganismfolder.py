@@ -73,7 +73,7 @@ class MicroorganismFolderView(ListingView):
                 "title": _("MRO phenotype")
             }),
             ("Description", {
-                "title": _("Description"),
+                "title": _c("Description"),
                 "index": "Description"
             }),
         ))

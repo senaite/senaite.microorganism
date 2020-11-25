@@ -18,7 +18,10 @@
 # Copyright 2020 by it's authors.
 # Some rights reserved, see README and LICENSE.
 
+from bika.lims.interfaces import IDoNotSupportSnapshots
+from senaite.core.interfaces import IHideActionsMenu
 from senaite.lims.interfaces import ISenaiteLIMS
+from zope.interface import Interface
 
 
 class ISenaiteMicroorganismLayer(ISenaiteLIMS):
@@ -26,4 +29,14 @@ class ISenaiteMicroorganismLayer(ISenaiteLIMS):
     This interface is referred in profiles/default/browserlayer.xml.
     All views and viewlets register against this layer will appear in the site
     only when the add-on installer has been run.
+    """
+
+
+class IMicroorganism(Interface):
+    """Marker interface for Microorganism content
+    """
+
+
+class IMicroorganismFolder(IHideActionsMenu, IDoNotSupportSnapshots):
+    """Marker interface for MicroorganismFolder content
     """

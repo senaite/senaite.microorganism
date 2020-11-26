@@ -18,9 +18,6 @@
 # Copyright 2020 by it's authors.
 # Some rights reserved, see README and LICENSE.
 
-from copy import copy
-
-from bika.lims import api
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
@@ -37,7 +34,6 @@ class IMicroorganismBehavior(model.Schema):
     gram_stain = schema.Choice(
         title=_(u"Gram stain"),
         vocabulary="senaite.microorganism.vocabularies.gram_stains",
-        default="Undefined",
     )
 
     glass = schema.Bool(
@@ -71,3 +67,35 @@ class Microorganism(object):
 
     def __init__(self, context):
         self.context = context
+
+    def _get_gram_stain(self):
+        return getattr(self.context, "gram_stain")
+
+    def _set_gram_stain(self, value):
+        self.context.gram_stain = value
+
+    gram_stain = property(_get_gram_stain, _set_gram_stain)
+
+    def _get_glass(self):
+        return getattr(self.context, "glass", False)
+
+    def _set_glass(self, value):
+        self.context.glass = value
+
+    glass = property(_get_glass, _set_glass)
+
+    def _get_multi_resistant(self):
+        return getattr(self.context, "multi_resistant", False)
+
+    def _set_multi_resistant(self, value):
+        self.context.multi_resistant = value
+
+    multi_resistant = property(_get_multi_resistant, _set_multi_resistant)
+
+    def _get_mro_phenotype(self):
+        return getattr(self.context, "mro_phenotype")
+
+    def _set_mro_phenotype(self, value):
+        self.context.mro_phenotype = value
+
+    mro_phenotype = property(_get_mro_phenotype, _set_mro_phenotype)

@@ -126,6 +126,11 @@ class MicroorganismFolderView(ListingView):
         item["mro_phenotype"] = obj.mro_phenotype
         item["class"]["mro"] = "center"
         item["class"]["glass"] = "center"
+
+        max_length = 150
+        description = obj.description
+        if len(description) > max_length:
+            item["Description"] = "{} ...".format(description[:max_length-4])
         return item
 
     def get_children_hook(self, parent_uid, child_uids=None):

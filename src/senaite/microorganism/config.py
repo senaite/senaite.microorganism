@@ -23,7 +23,34 @@ from senaite.microorganism import messageFactory as _
 # Gram stain options
 # List of (value, title) tuples
 GRAM_STAIN_OPTIONS = [
-    ("undef", _("Undefined")),
     ("gram+", _("Gram-positive")),
     ("gram-", _("Gram-negative")),
+]
+
+# Microorganism shape options
+# List of (value, title) tuples
+# Three basic shapes: coccus, rod or bacillus, and spiral.
+SHAPE_OPTIONS = [
+    # The cocci are spherical or oval bacteria
+    ("coccus", _("Coccus")),
+    # Cocci have one of several distinct arrangements based on their planes of
+    # division: diplococci, staphylococci, streptococci, sarcina, tetrad
+    ("coccus.diplococci", _("Diplococci")),
+    ("coccus.staphylococci", _("Staphylococci")),
+    ("coccus.streptococci", _("Streptococci")),
+    ("coccus.sarcina", _("Sarcina")),
+    ("coccus.tetrad", _("Tetrad")),
+
+    # Bacilli (or rod) are rod-shaped bacteria
+    ("rod", _("Rod")),
+    # Bacilli all divide in one plane producing a bacillus, streptobacillus, or
+    # coccobacillus arrangement
+    ("rod.bacillus", _("Bacillus")),
+    ("rod.streptobacilli", _("Streptobacilli")),
+    ("rod.coccobacilli", _("Coccobacilli")),
+
+    # Spirals come in one of three forms, a vibrio, a spirillum, or a spirochete
+    ("spiral", _("Spiral")),
+    ("spiral.vibrio", _("Vibrio")),
+    ("spiral.spirillum", _("Spirillum"))
 ]

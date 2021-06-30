@@ -28,6 +28,7 @@ from plone.memoize import view
 from senaite.app.listing import ListingView
 from senaite.microorganism import messageFactory as _
 from senaite.microorganism.config import GRAM_STAIN_OPTIONS
+from senaite.microorganism.config import SHAPE_OPTIONS
 
 
 class MicroorganismFolderView(ListingView):
@@ -60,6 +61,9 @@ class MicroorganismFolderView(ListingView):
             }),
             ("gram_stain", {
                 "title": _("Gram stain")
+            }),
+            ("shape", {
+                "title": _("Shape"),
             }),
             ("glass", {
                 "title": _("GLASS"),
@@ -121,6 +125,7 @@ class MicroorganismFolderView(ListingView):
 
         obj = api.get_object(obj)
         item["gram_stain"] = self.get_gram_stain_title(obj.gram_stain)
+        item["shape"] = self.get_shape_title(obj.shape)
         item["glass"] = obj.glass
         item["mro"] = obj.multi_resistant
         item["mro_phenotype"] = obj.mro_phenotype
@@ -140,3 +145,9 @@ class MicroorganismFolderView(ListingView):
         """Returns the title of the gram satin value passed-in
         """
         return dict(GRAM_STAIN_OPTIONS).get(gram_stain_value, "")
+
+    @view.memoize
+    def get_shape_title(self, shape_value):
+        """Returns the title of the shape value passed-in
+        """
+        return dict(SHAPE_OPTIONS).get(shape_value, "")

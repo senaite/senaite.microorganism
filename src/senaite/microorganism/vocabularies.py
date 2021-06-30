@@ -19,6 +19,7 @@
 # Some rights reserved, see README and LICENSE.
 
 from senaite.microorganism.config import GRAM_STAIN_OPTIONS
+from senaite.microorganism.config import SHAPE_OPTIONS
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
@@ -38,3 +39,18 @@ class GramStainsVocabulary(object):
 
 
 GramStainsVocabularyFactory = GramStainsVocabulary()
+
+
+@implementer(IVocabularyFactory)
+class ShapesVocabulary(object):
+    """Vocabulary of pre-defined Shapes
+    """
+
+    def __call__(self, context):
+        """Returns a SimpleVocabulary of microorganism shapes
+        """
+        items = map(lambda g: SimpleTerm(g[0], title=g[1]), SHAPE_OPTIONS)
+        return SimpleVocabulary(items)
+
+
+ShapesVocabularyFactory = ShapesVocabulary()

@@ -34,6 +34,13 @@ class IMicroorganismBehavior(model.Schema):
     gram_stain = schema.Choice(
         title=_(u"Gram stain"),
         vocabulary="senaite.microorganism.vocabularies.gram_stains",
+        required=False,
+    )
+
+    shape = schema.Choice(
+        title=_(u"Shape"),
+        vocabulary="senaite.microorganism.vocabularies.shapes",
+        required=False,
     )
 
     glass = schema.Bool(
@@ -75,6 +82,14 @@ class Microorganism(object):
         self.context.gram_stain = value
 
     gram_stain = property(_get_gram_stain, _set_gram_stain)
+
+    def _get_shape(self):
+        return getattr(self.context, "shape")
+
+    def _set_shape(self, value):
+        self.context.shape = value
+
+    shape = property(_get_shape, _set_shape)
 
     def _get_glass(self):
         return getattr(self.context, "glass", False)

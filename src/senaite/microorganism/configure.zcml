@@ -21,6 +21,9 @@
   <utility
       component="senaite.microorganism.vocabularies.GramStainsVocabularyFactory"
       name="senaite.microorganism.vocabularies.gram_stains" />
+  <utility
+      component="senaite.microorganism.vocabularies.ShapesVocabularyFactory"
+      name="senaite.microorganism.vocabularies.shapes" />
 
   <!-- Default profile -->
   <genericsetup:registerProfile

@@ -21,7 +21,7 @@
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
-from senaite.ast import messageFactory as _
+from senaite.microorganism import messageFactory as _
 from zope import schema
 from zope.component import adapter
 from zope.interface import implementer

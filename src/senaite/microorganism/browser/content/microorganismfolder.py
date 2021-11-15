@@ -22,10 +22,10 @@ import collections
 
 from bika.lims import _ as _c
 from bika.lims import api
-from bika.lims.catalog import SETUP_CATALOG
 from bika.lims.utils import get_link_for
 from plone.memoize import view
 from senaite.app.listing import ListingView
+from senaite.core.catalog import SETUP_CATALOG
 from senaite.microorganism import messageFactory as _
 from senaite.microorganism.config import GRAM_STAIN_OPTIONS
 from senaite.microorganism.config import SHAPE_OPTIONS

@@ -18,8 +18,8 @@
 # Copyright 2020 by it's authors.
 # Some rights reserved, see README and LICENSE.
 
-from bika.lims.catalog import SETUP_CATALOG
 from plone.dexterity.content import Item
+from senaite.core.catalog import SETUP_CATALOG
 from senaite.microorganism.interfaces import IMicroorganism
 from zope.interface import implementer
 

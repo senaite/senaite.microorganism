@@ -11,5 +11,12 @@
     permission="senaite.core.permissions.ManageBika"
     layer="senaite.microorganism.interfaces.ISenaiteMicroorganismLayer" />
 
+  <!-- Microorganism categories folder view -->
+  <browser:page
+      for="senaite.microorganism.content.microorganismcategories.IMicroorganismCategories"
+      name="view"
+      class=".microorganismcategories.MicroorganismCategoriesView"
+      permission="senaite.core.permissions.ManageBika"
+      layer="senaite.microorganism.interfaces.ISenaiteMicroorganismLayer" />
 
 </configure>

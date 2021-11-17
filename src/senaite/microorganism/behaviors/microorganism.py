@@ -18,9 +18,13 @@
 # Copyright 2020 by it's authors.
 # Some rights reserved, see README and LICENSE.
 
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
+from senaite.core.catalog import SETUP_CATALOG
+from senaite.core.schema import UIDReferenceField
+from senaite.core.z3cform.widgets.uidreference import UIDReferenceWidgetFactory
 from senaite.microorganism import messageFactory as _
 from zope import schema
 from zope.component import adapter
@@ -65,6 +69,43 @@ class IMicroorganismBehavior(model.Schema):
     mro_phenotype = schema.TextLine(
         title=_(u"MRO phenotype"),
         required=False,
+    )
+
+    category = UIDReferenceField(
+        title=_(u"Category / Group"),
+        description=_(
+            u"The category or group this microorganism belongs to"
+        ),
+        allowed_types=("MicroorganismCategory", ),
+        multi_valued=False,
+        required=False,
+    )
+
+    directives.widget(
+        "category",
+        UIDReferenceWidgetFactory,
+        catalog=SETUP_CATALOG,
+        query={
+            "portal_type": "MicroorganismCategory",
+            "is_active": True,
+            "sort_on": "title",
+            "sort_order": "ascending",
+        },
+        display_template="<a href='${url}'>${title}</a>",
+        columns=[
+            {
+                "name": "title",
+                "width": "30",
+                "align": "left",
+                "label": _(u"Title"),
+            }, {
+                "name": "description",
+                "width": "70",
+                "align": "left",
+                "label": _(u"Description"),
+            },
+        ],
+        limit=15,
     )
 
 
@@ -114,3 +155,11 @@ class Microorganism(object):
         self.context.mro_phenotype = value
 
     mro_phenotype = property(_get_mro_phenotype, _set_mro_phenotype)
+
+    def _get_category(self):
+        return getattr(self.context, "category")
+
+    def _set_category(self, value):
+        self.context.category = value
+
+    category = property(_get_category, _set_category)

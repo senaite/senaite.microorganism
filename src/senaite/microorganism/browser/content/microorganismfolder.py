@@ -26,6 +26,7 @@ from bika.lims.utils import get_link_for
 from plone.memoize import view
 from senaite.app.listing import ListingView
 from senaite.core.catalog import SETUP_CATALOG
+from senaite.core.p3compat import cmp
 from senaite.microorganism import messageFactory as _
 from senaite.microorganism.config import GRAM_STAIN_OPTIONS
 from senaite.microorganism.config import SHAPE_OPTIONS
@@ -38,8 +39,11 @@ class MicroorganismFolderView(ListingView):
     def __init__(self, context, request):
         super(MicroorganismFolderView, self).__init__(context, request)
 
-        self.catalog = SETUP_CATALOG
+        self.categories = []
+        self.show_categories = True
+        self.pagesize = 999999  # hide batching controls
 
+        self.catalog = SETUP_CATALOG
         self.contentFilter = {
             "portal_type": "Microorganism",
             "sort_on": "sortable_title",
@@ -103,16 +107,6 @@ class MicroorganismFolderView(ListingView):
             },
         ]
 
-    def update(self):
-        """Update hook
-        """
-        super(MicroorganismFolderView, self).update()
-
-    def before_render(self):
-        """Before template render hook
-        """
-        super(MicroorganismFolderView, self).before_render()
-
     def folderitem(self, obj, item, index):
         """Service triggered each time an item is iterated in folderitems.
         The use of this service prevents the extra-loops in child objects.
@@ -132,13 +126,55 @@ class MicroorganismFolderView(ListingView):
         item["class"]["mro"] = "center"
         item["class"]["glass"] = "center"
         item["Description"] = obj.description
+
+        # Group into categories
+        self.categorize(obj, item)
+
         return item
 
-    def get_children_hook(self, parent_uid, child_uids=None):
-        """Hook to get the children of an item
+    def categorize(self, obj, item):
+        """Assigns the category to the item passed-in so the items of the
+        listing are displayed in categories/groups
         """
-        super(MicroorganismFolderView, self).get_children_hook(
-            parent_uid, child_uids=child_uids)
+        uncategorized = _("Uncategorized")
+
+        def sort_category(a, b):
+            # Uncategorized always comes first
+            if a == uncategorized:
+                return -1
+            if b == uncategorized:
+                return 1
+
+            a = a.lower().strip()
+            b = b.lower().strip()
+            return cmp(a, b)
+
+        # Get the category name
+        category = self.get_category_title(obj, default=uncategorized)
+
+        # Add the category if not yet in there
+        if category not in self.categories:
+            self.categories.append(category)
+
+            # Sort the categories
+            self.categories = sorted(self.categories, cmp=sort_category)
+
+        item["category"] = category
+
+    def get_category_title(self, microorganism, default=None):
+        """Returns the category title of the microorganism passed-in
+        """
+        category = microorganism.category
+        if category:
+            category = category[0]
+        return self.get_obj_title(category, default=default)
+
+    @view.memoize
+    def get_obj_title(self, obj_uid, default=None):
+        if api.is_uid(obj_uid):
+            obj = api.get_object_by_uid(obj_uid)
+            return api.get_title(obj) or default
+        return default
 
     @view.memoize
     def get_gram_stain_title(self, gram_stain_value):

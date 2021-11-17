@@ -6,9 +6,15 @@
     <type type_id="MicroorganismFolder">
       <bound-workflow workflow_id="senaite_one_state_workflow"/>
     </type>
+    <type type_id="MicroorganismCategories">
+      <bound-workflow workflow_id="senaite_one_state_workflow"/>
+    </type>
 
     <!-- Bindings to "senaite_deactivable_type_workflow" -->
     <type type_id="Microorganism">
+      <bound-workflow workflow_id="senaite_deactivable_type_workflow"/>
+    </type>
+    <type type_id="MicroorganismCategory">
       <bound-workflow workflow_id="senaite_deactivable_type_workflow"/>
     </type>
 

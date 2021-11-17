@@ -40,3 +40,13 @@ class IMicroorganism(Interface):
 class IMicroorganismFolder(IHideActionsMenu, IDoNotSupportSnapshots):
     """Marker interface for MicroorganismFolder content
     """
+
+
+class IMicroorganismCategory(Interface):
+    """Marker interface for MicroorganismCategory content
+    """
+
+
+class IMicroorganismCategories(IHideActionsMenu, IDoNotSupportSnapshots):
+    """Marker interface for MicroorganismCategories content
+    """

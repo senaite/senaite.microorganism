@@ -28,6 +28,7 @@ from zope.component import getUtility
 # Tuples of (folder_id, folder_name, type)
 SETUP_FOLDERS = [
     ("microorganisms", "Microorganisms", "MicroorganismFolder"),
+    ("microorganism_categories", "Microorganism categories", "MicroorganismCategories"),
 ]
 
 

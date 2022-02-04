@@ -167,7 +167,8 @@ class MicroorganismFolderView(ListingView):
         category = microorganism.category
         if category:
             category = category[0]
-        return self.get_obj_title(category, default=default)
+            return self.get_obj_title(category, default=default)
+        return default
 
     @view.memoize
     def get_obj_title(self, obj_uid, default=None):

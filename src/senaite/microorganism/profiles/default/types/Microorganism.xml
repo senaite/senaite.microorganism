@@ -43,16 +43,14 @@
   <property name="add_permission">cmf.AddPortalContent</property>
 
   <!-- Python class for content items of this sort -->
-  <property name="schema">senaite.microorganism.content.microorganism.IMicroorganism</property>
+  <property name="schema">senaite.microorganism.content.microorganism.IMicroorganismSchema</property>
   <property name="klass">senaite.microorganism.content.microorganism.Microorganism</property>
 
   <!-- Dexterity behaviours for this type -->
   <property name="behaviors">
     <element value="bika.lims.interfaces.IAutoGenerateID"/>
     <element value="bika.lims.interfaces.IMultiCatalogBehavior"/>
-    <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
-    <element value="senaite.microorganism.behaviors.microorganism.IMicroorganismBehavior" />
   </property>
 
   <!-- Action aliases -->

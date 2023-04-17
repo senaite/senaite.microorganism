@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="senaite.microorganism">
+
+  <genericsetup:upgradeStep
+      title="SENAITE MICROORGANISM 1.1.0: Remove behaviors"
+      description="Remove behaviors and use content schema instead"
+      source="1.1.0"
+      destination="1101"
+      handler=".v01_01_000.remove_microorganism_behavior"
+      profile="senaite.microorganism:default"/>
+
+</configure>

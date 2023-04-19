@@ -19,8 +19,10 @@
 # Some rights reserved, see README and LICENSE.
 
 from AccessControl import ClassSecurityInfo
+from bika.lims import api
 from plone.autoform import directives
 from plone.supermodel import model
+from Products.CMFCore import permissions
 from senaite.core.catalog import SETUP_CATALOG
 from senaite.core.content.base import Container
 from senaite.core.schema import UIDReferenceField
@@ -29,7 +31,8 @@ from senaite.microorganism import messageFactory as _
 from senaite.microorganism.interfaces import IMicroorganism
 from zope import schema
 from zope.interface import implementer
-from Products.CMFCore import permissions
+from zope.interface import Invalid
+from zope.interface import invariant
 
 
 class IMicroorganismSchema(model.Schema):
@@ -118,6 +121,29 @@ class IMicroorganismSchema(model.Schema):
         ],
         limit=15,
     )
+
+    @invariant
+    def validate_title(data):
+        """Checks if the title is unique
+        """
+        # https://community.plone.org/t/dexterity-unique-field-validation
+        context = getattr(data, "__context__", None)
+        if context is not None:
+            if context.title == data.title:
+                # nothing changed
+                return
+
+        if not data.title:
+            # Support for non-required fields
+            return
+
+        query = {
+            "portal_type": "Microorganism",
+            "title": data.title
+        }
+        brains = api.search(query, SETUP_CATALOG)
+        if len(brains) > 0:
+            raise Invalid(_("Title must be unique"))
 
 
 @implementer(IMicroorganism, IMicroorganismSchema)

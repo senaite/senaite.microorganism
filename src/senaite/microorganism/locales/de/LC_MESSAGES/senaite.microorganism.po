@@ -1,100 +1,107 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translators:
+# Ramon Bartl <rb@ridingbytes.com>, 2024
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-01-03 12:42+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-06-17 17:31+0000\n"
+"Last-Translator: Ramon Bartl <rb@ridingbytes.com>, 2024\n"
+"Language-Team: German (https://app.transifex.com/senaite/teams/139381/de/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: senaite.microorganism\n"
+"Language: de\n"
 
 #: senaite/microorganism/config.py:48
 msgid "Bacillus"
-msgstr ""
+msgstr "Bazillus"
 
 #: senaite/microorganism/content/microorganism.py:89
 msgid "Category / Group"
-msgstr ""
+msgstr "Kategorie / Gruppe"
 
 #: senaite/microorganism/config.py:50
 msgid "Coccobacilli"
-msgstr ""
+msgstr "Kokobakterien"
 
 #: senaite/microorganism/config.py:35
 msgid "Coccus"
-msgstr ""
+msgstr "Kokkus"
 
 #: senaite/microorganism/content/microorganism.py:119
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: senaite/microorganism/config.py:38
 msgid "Diplococci"
-msgstr ""
+msgstr "Diplokokken"
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:73
 msgid "GLASS"
-msgstr ""
+msgstr "GLASS"
 
 #: senaite/microorganism/content/microorganism.py:65
 msgid "GLASS organism"
-msgstr ""
+msgstr "GLASS Organismus"
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:67
 #: senaite/microorganism/content/microorganism.py:53
 msgid "Gram stain"
-msgstr ""
+msgstr "Gramfärbung"
 
 #: senaite/microorganism/config.py:27
 msgid "Gram-negative"
-msgstr ""
+msgstr "Gram-negativ"
 
 #: senaite/microorganism/config.py:26
 msgid "Gram-positive"
-msgstr ""
+msgstr "Gram-positiv"
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:77
 msgid "MRO"
-msgstr ""
+msgstr "MRO"
 
 #: senaite/microorganism/content/microorganism.py:76
 msgid "MRO Organism"
-msgstr ""
+msgstr "MRO-Organismus"
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:81
 #: senaite/microorganism/content/microorganism.py:84
 msgid "MRO phenotype"
-msgstr ""
+msgstr "MRO-Phänotyp"
 
 #: senaite/microorganism/profiles/default/types/Microorganism.xml
 msgid "Microorganism"
-msgstr ""
+msgstr "Mikroorganismus"
 
 #: senaite/microorganism/profiles/default/types/MicroorganismCategories.xml
 msgid "Microorganism categories"
-msgstr ""
+msgstr "Kategorien von Mikroorganismen"
 
 #: senaite/microorganism/profiles/default/types/MicroorganismCategory.xml
 msgid "Microorganism category"
-msgstr ""
+msgstr "Mikroorganismus Kategorie"
 
 #: senaite/microorganism/profiles/default/types/MicroorganismFolder.xml
 msgid "Microorganisms"
-msgstr ""
+msgstr "Mikroorganismen"
 
 #: senaite/microorganism/configure.zcml:36
 msgid "Microorganisms handling for SENAITE"
-msgstr ""
+msgstr "Mikroorganismen Erweiterung für SENAITE"
 
 #: senaite/microorganism/config.py:45
 msgid "Rod"
-msgstr ""
+msgstr "Rod"
 
 #: senaite/microorganism/configure.zcml:36
 msgid "SENAITE MICROORGANISM"
@@ -106,44 +113,44 @@ msgstr ""
 
 #: senaite/microorganism/config.py:41
 msgid "Sarcina"
-msgstr ""
+msgstr "Sarcina"
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:70
 #: senaite/microorganism/content/microorganism.py:59
 msgid "Shape"
-msgstr ""
+msgstr "Form"
 
 #: senaite/microorganism/config.py:53
 msgid "Spiral"
-msgstr ""
+msgstr "Spiral"
 
 #: senaite/microorganism/config.py:55
 msgid "Spirillum"
-msgstr ""
+msgstr "Spirillum"
 
 #: senaite/microorganism/config.py:39
 msgid "Staphylococci"
-msgstr ""
+msgstr "Staphylokokken"
 
 #: senaite/microorganism/config.py:49
 msgid "Streptobacilli"
-msgstr ""
+msgstr "Streptobakterien"
 
 #: senaite/microorganism/config.py:40
 msgid "Streptococci"
-msgstr ""
+msgstr "Streptokokken"
 
 #: senaite/microorganism/config.py:42
 msgid "Tetrad"
-msgstr ""
+msgstr "Tetrade"
 
 #: senaite/microorganism/content/microorganism.py:90
 msgid "The category or group this microorganism belongs to"
-msgstr ""
+msgstr "Die Kategorie oder Gruppe, zu der dieser Mikroorganismus gehört"
 
 #: senaite/microorganism/content/microorganism.py:114
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: senaite/microorganism/content/microorganism.py:146
 msgid "Title must be unique"
@@ -151,16 +158,16 @@ msgstr ""
 
 #: senaite/microorganism/browser/content/microorganismfolder.py:139
 msgid "Uncategorized"
-msgstr ""
+msgstr "Nicht kategorisiert"
 
 #: senaite/microorganism/config.py:54
 msgid "Vibrio"
-msgstr ""
+msgstr "Vibrio"
 
 #: senaite/microorganism/content/microorganism.py:66
 msgid "Whether this is an infectious organism included in the Global Antimicrobial Resistance Surveillance System (GLASS) for the the collection, analysis and sharing of Antimicrobial Resistance (AMR) data at a global level"
-msgstr ""
+msgstr "Ob es sich um einen infektiösen Organismus handelt, der im Global Antimicrobial Resistance Surveillance System (GLASS) zur Sammlung, Analyse und Weitergabe von Daten zur Antibiotikaresistenz (AMR) auf globaler Ebene enthalten ist"
 
 #: senaite/microorganism/content/microorganism.py:77
 msgid "Whether this organism is considered multi resistant (MRO)"
-msgstr ""
+msgstr "Ob dieser Organismus als multiresistent (MRO) gilt"

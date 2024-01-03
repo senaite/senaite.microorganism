@@ -1,9 +1,8 @@
 [main]
 host = https://www.transifex.com
 
-[senaite-microorganism.senaite]
+[o:senaite:p:senaite-microorganism:r:senaite]
 file_filter = <lang>/LC_MESSAGES/senaite.microorganism.po
-host = https://www.transifex.com
 source_file = senaite.microorganism.pot
 source_lang = en
 type = PO

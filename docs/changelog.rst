@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0 (unreleased)
+1.1.0 (2024-01-04)
 ------------------
 
 - #7 Do not allow microorganisms with same title

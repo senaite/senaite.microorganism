@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-01-03 12:42+0000\n"
+"POT-Creation-Date: 2025-04-04 12:44+0000\n"
 "PO-Revision-Date: 2022-06-17 17:31+0000\n"
 "Last-Translator: Ramon Bartl <rb@ridingbytes.com>, 2024\n"
 "Language-Team: German (https://app.transifex.com/senaite/teams/139381/de/)\n"

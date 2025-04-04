@@ -1,13 +1,13 @@
 #
 # Translators:
-# Jiří Podhorecký, 2023
+# Jiří Podhorecký <jirka.p@volny.cz>, 2024
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-01-03 12:42+0000\n"
+"POT-Creation-Date: 2025-04-04 12:44+0000\n"
 "PO-Revision-Date: 2022-06-17 17:31+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/senaite/teams/139381/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +75,7 @@ msgstr "MRO Organismus"
 #: senaite/microorganism/browser/content/microorganismfolder.py:81
 #: senaite/microorganism/content/microorganism.py:84
 msgid "MRO phenotype"
-msgstr ""
+msgstr "MRO fenotyp"
 
 #: senaite/microorganism/profiles/default/types/Microorganism.xml
 msgid "Microorganism"
@@ -116,11 +116,11 @@ msgstr ""
 #: senaite/microorganism/browser/content/microorganismfolder.py:70
 #: senaite/microorganism/content/microorganism.py:59
 msgid "Shape"
-msgstr ""
+msgstr "Tvar"
 
 #: senaite/microorganism/config.py:53
 msgid "Spiral"
-msgstr ""
+msgstr "Spirála"
 
 #: senaite/microorganism/config.py:55
 msgid "Spirillum"

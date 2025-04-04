@@ -1,6 +1,4 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 # Translators:
 # Jordi Puiggené <jpuiggene@naralabs.com>, 2024
 #

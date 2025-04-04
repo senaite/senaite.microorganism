@@ -1,6 +1,4 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 # Translators:
 # Ramon Bartl <rb@ridingbytes.com>, 2024
 #

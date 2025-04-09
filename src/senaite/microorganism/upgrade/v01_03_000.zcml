@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeStep
+      title="Upgrade to SENAITE.MICROORGANISM 1.3.0"
+      source="1200"
+      destination="1300"
+      handler=".v01_03_000.upgrade"
+      profile="senaite.microorganism:default"/>
+
+</configure>

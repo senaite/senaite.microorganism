@@ -1,6 +1,21 @@
 Microorganisms for SENAITE
 ==========================
 
+.. image:: https://img.shields.io/pypi/v/senaite.microorganism.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/senaite.microorganism
+
+.. image:: https://img.shields.io/github/actions/workflow/status/senaite/senaite.microorganism/build.yml?branch=master
+   :target: https://github.com/senaite/senaite.microorganism/actions/workflows/build.yml?query=branch:master
+
+.. image:: https://img.shields.io/github/issues-pr/senaite/senaite.microorganism.svg?style=flat-square
+    :target: https://github.com/senaite/senaite.microorganism/pulls
+
+.. image:: https://img.shields.io/github/issues/senaite/senaite.microorganism.svg?style=flat-square
+    :target: https://github.com/senaite/senaite.microorganism/issues
+
+.. image:: https://img.shields.io/badge/Made%20for%20SENAITE-%E2%AC%A1-lightgrey.svg
+   :target: https://www.senaite.com
+
 About
 -----
 

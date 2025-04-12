@@ -5,7 +5,7 @@ on:
 env:
   PLONE_VERSION: "5.2"
 jobs:
-  build:
+  build-and-test:
     runs-on: 'ubuntu-20.04'
     container:
       image: python:2.7.18-buster
@@ -25,3 +25,7 @@ jobs:
           bin/pip install -r requirements.txt
           bin/buildout -N -t 3 annotate
           bin/buildout -N -t 3
+      - name: lint
+        run: |
+          bin/pip install flake8
+          bin/flake8 --config ci_flake8.cfg src/senaite/

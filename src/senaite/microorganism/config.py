@@ -49,7 +49,7 @@ SHAPE_OPTIONS = [
     ("rod.streptobacilli", _("Streptobacilli")),
     ("rod.coccobacilli", _("Coccobacilli")),
 
-    # Spirals come in one of three forms, a vibrio, a spirillum, or a spirochete
+    # Spirals come in one of three forms, vibrio, spirillum, or spirochete
     ("spiral", _("Spiral")),
     ("spiral.vibrio", _("Vibrio")),
     ("spiral.spirillum", _("Spirillum"))

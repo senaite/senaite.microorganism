@@ -32,4 +32,4 @@ logger = logging.getLogger(PRODUCT_NAME)
 def initialize(context):
     """Initializer called when used as a Zope 2 product
     """
-    logger.info("*** Initializing SENAITE MICROORGANISM Customization package ***")
+    logger.info("*** Initializing SENAITE MICROORGANISM ***")
